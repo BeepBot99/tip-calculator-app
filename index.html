@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,48 @@
   <title>Frontend Mentor | Tip calculator app</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono:wght@700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <div class="logo"><img src="images/logo.svg" alt="Splitter Logo"></div>
   <div class="content">
     <div class="light-section">
-    <label for="bill">Bill</label>
-    <input type="text" placeholder="0" id="bill">
-    <label>Select Tip %</label>
+      <label for="bill">Bill</label>
+      <input type="number" placeholder="0" id="bill" style="background-image: url('images/icon-dollar.svg')" min="0">
+      <label>Select Tip %</label>
+      <div class="button-container">
+        <button>5%</button>
+        <button>10%</button>
+        <button>15%</button>
+        <button>25%</button>
+        <button>50%</button>
+        <input type="number" placeholder="Custom">
+      </div>
+      <label for="people">Number of People</label>
+      <input type="number" placeholder="0" id="people" style="background-image: url('images/icon-person.svg')" min="0">
     </div>
-    <div class="dark-section"></div>
+    <div class="dark-section">
+      <div class="total-category-container">
+        <div class="total-category">
+          <div class="total-category-text">
+            <h3>Tip Amount</h3>
+            <h4>/ person</h4>
+          </div>
+          <h2 id="tipAmountPerPerson">$0.00</h2>
+        </div>
+        <div class="total-category">
+          <div class="total-category-text">
+            <h3>Total</h3>
+            <h4>/ person</h4>
+          </div>  
+          <h2 id="totalPerPerson">$0.00</h2>
+        </div>
+      </div>
+      <button id="resetButton">RESET</button>
+    </div>
   </div>
 </body>
+
 </html>
