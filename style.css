@@ -3,8 +3,8 @@
 }
 
 :root {
-    --very-dark-cyan: hsl(183, 100%, 15%);
     --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
     --dark-grayish-cyan: hsl(186, 14%, 43%);
     --grayish-cyan: hsl(184, 14%, 56%);
     --light-grayish-cyan: hsl(185, 41%, 84%);
@@ -14,13 +14,51 @@
 
 body {
     margin: 0;
-    background-color: hsl(185, 41%, 84%);
+    background-color: var(--light-grayish-cyan);
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: 700;
+    font-family: 'Space Mono';
+}
+
+.logo {
+    padding: 3.5rem;
 }
 
 .content {
-    width: 80vw;
     background-color: white;
+    border-radius: 18px 18px 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    justify-content: space-between;
+}
+
+.light-section {
+    padding: 0.5rem;
+    flex-grow: 6;
+}
+
+.dark-section {
+    background-color: var(--very-dark-cyan);
+    padding: 1.75rem;
+    border-radius: 18px;
+    flex-grow: 3;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        padding-top: 3rem;
+    }
+    .content {
+        width: 65vw;
+        height: 60vh;
+        border-radius: 18px;
+        flex-direction: row;
+    }
+    .light-section {
+        flex-grow: 4;
+    }
 }
