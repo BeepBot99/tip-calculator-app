@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Space Mono';
 }
 
 :root {
@@ -19,7 +20,6 @@ body {
     flex-direction: column;
     align-items: center;
     font-weight: 700;
-    font-family: 'Space Mono';
 }
 
 .logo {
@@ -27,7 +27,7 @@ body {
 }
 
 .content {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 18px 18px 0 0;
     width: 100%;
     display: flex;
@@ -37,17 +37,43 @@ body {
 }
 
 .light-section {
-    padding: 0.5rem;
-    flex-grow: 6;
+    flex: 6 1px;
+    margin-bottom: 1rem;
 }
 
 .dark-section {
     background-color: var(--very-dark-cyan);
     padding: 1.75rem;
     border-radius: 18px;
-    flex-grow: 3;
+    flex: 3 1px;
 }
 
+label {
+    display: block;
+    color: var(--dark-grayish-cyan);
+    margin-bottom: 0.5rem;
+}
+
+input {
+    display: block;
+    text-align: right;
+    border: none;
+    outline: none;
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 24px;
+    border-radius: 7px;
+    background-image: url("images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 1rem center;
+}
+
+input::placeholder {
+    color: var(--grayish-cyan);
+}
 @media only screen and (min-width: 768px) {
     body {
         padding-top: 3rem;
@@ -59,6 +85,8 @@ body {
         flex-direction: row;
     }
     .light-section {
-        flex-grow: 4;
+        flex: 4 1px;
+        padding: 0.5rem;
+        margin-bottom: 0;
     }
 }
