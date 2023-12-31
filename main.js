@@ -19,6 +19,11 @@ function updateValues() {
     totalPerPerson = isFinite(totalPerPerson) ? totalPerPerson : "0.00";
     tipOutput.innerText = "$" + tipPerPerson;
     totalOutput.innerText = "$" + totalPerPerson;
+    if (totalOutput.innerText === "$0.00") {
+        resetButton.setAttribute("emptyState", "");
+    } else {
+        try {resetButton.removeAttribute("emptyState")} catch (e) {};
+    }
 }
 numberOfPeopleInput.addEventListener("keyup", () => {
     updateValues();
@@ -30,11 +35,12 @@ resetButton.addEventListener("click", () => {
     billInput.value = "";
     numberOfPeopleInput.value = "";
     updateValues();
+    resetButton.setAttribute("emptyState", "");
 });
 tipButtons.forEach(button => {
     if (Array.from(tipButtons).indexOf(button) <= 4) {
         button.addEventListener("click", () => {
-            try { activeButton.removeAttribute("selected") } catch (e) { };
+            try { activeButton.removeAttribute("selected")} catch (e) {};
             activeButton = button;
             button.setAttribute("selected", "");
             currentTip = tips[Array.from(tipButtons).indexOf(button)];

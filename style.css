@@ -166,6 +166,11 @@ input::placeholder {
     background-color: var(--light-grayish-cyan);
 }
 
+#resetButton[emptyState] {
+    background-color: var(--dark-grayish-cyan);
+    cursor: not-allowed;
+}
+
 @media only screen and (min-width: 768px) {
     body {
         padding-top: 3rem;
