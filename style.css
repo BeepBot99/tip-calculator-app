@@ -93,6 +93,10 @@ input::placeholder {
     color: var(--white);
 }
 
+.button-container button[selected] {
+    background-color: var(--strong-cyan);
+}
+
 .button-container input {
     background-color: var(--very-light-grayish-cyan);
     padding: 0.5rem;
@@ -105,8 +109,7 @@ input::placeholder {
 }
 
 .button-container button:hover,
-.button-container button:active,
-.button-container button[selected] {
+.button-container button:active {
     color: var(--very-dark-cyan);
     background-color: var(--light-grayish-cyan);
 }
@@ -147,6 +150,20 @@ input::placeholder {
 
 .total-category h4 {
     color: var(--dark-grayish-cyan);
+}
+
+#resetButton {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+#resetButton:hover,
+#resetButton:active {
+    background-color: var(--light-grayish-cyan);
 }
 
 @media only screen and (min-width: 768px) {
